@@ -17,7 +17,7 @@ fi
 
 
 
-curl -sS https://raw.githubusercontent.com/zairulhyuk12/script-bot/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/zairulhyuk12/autoscript-bot-kenzo/main/resources/ascii-home
 echo "Dependencies"
 echo "Progress..."
 sleep 2
