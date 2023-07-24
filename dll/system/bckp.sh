@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/zairulhyuk12/autoscript-bot-kenzo/ip-bot/main/ip-bot > /root/tmp
+    curl -sS https://raw.githubusercontent.com/zairulhyuk12/PENDAFTARAN-IP/main/DAFTAR-IP > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/zairulhyuk12/autoscript-bot-kenzo/ip-bot/main/ip-bot | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/zairulhyuk12/PENDAFTARAN-IP/main/DAFTAR-IP | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/zairulhyuk12/autoscript-bot-kenzo/ip-bot/main/ip-bot | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/zairulhyuk12/PENDAFTARAN-IP/main/DAFTAR-IP | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -67,7 +67,7 @@ IP=$(curl -sS ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-NameUser=$(curl -sS https://raw.githubusercontent.com/zairulhyuk12/autoscript-bot-kenzo/ip-bot/main/ip-bot | grep $MYIP | awk '{print $2}')
+NameUser=$(curl -sS https://raw.githubusercontent.com/zairulhyuk12/PENDAFTARAN-IP/main/DAFTAR-IP | grep $MYIP | awk '{print $2}')
 
 
 clear
@@ -102,7 +102,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/kenzotelco/user-backup-db.git /root/user-backup/ &> /dev/null
+git clone https://github.com/zairulhyuk12/user-backup-db.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -121,15 +121,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "syfqpubg5@gmail.com" &> /dev/null
-    git config --global user.name "kenzotelco" &> /dev/null
+    git config --global user.email "zairulhyuk12@gmail.com" &> /dev/null
+    git config --global user.name "zairulhyuk12" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/kenzotelco/user-backup-db
-    git push -f https://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@github.com/kenzotelco/user-backup-db.git &> /dev/null
+    git remote add origin https://github.com/zairulhyuk12/user-backup-db
+    git push -f https://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@github.com/zairulhyuk12/user-backup-db.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -144,7 +144,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/zairulhyuk12/autoscript-bot-kenzo/user-backup-db/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/zairulhyuk12/user-backup-db/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Backup done "
 sleep 1
